@@ -11,8 +11,28 @@ A video annotation tool built with [python](https://www.python.org/), [flask](ht
 git clone https://github.com/zkneupper/video-subtitler.git
 ```
 
+2. If necessary, create new virtual environment containing `python>=3.6` and `flask`.
 
-2. How to start the `video-subtitler` server:
+
+For `conda` users:
+
+```bash
+# Create a new environment called `flask_env`
+conda create --name flask_env --file requirements.txt
+```
+
+
+3. Activate the virtual environment containing `python>=3.6` and `flask`.
+
+
+For `conda` users:
+
+```bash
+conda activate flask_env
+```
+
+
+4. How to start the `video-subtitler` server:
 
 ```bash
 # Activate a python 3.6+ virtual environtment with flask installed
@@ -25,7 +45,7 @@ python app.py
 ```
 
 
-3. Open the `video-subtitler` app in your default browser
+5. Open the `video-subtitler` app in your default browser
 
 ```bash
 # Open the `video-subtitler` app in your default browser
