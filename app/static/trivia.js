@@ -1,3 +1,10 @@
+// From https://github.com/katspaugh/wavesurfer.js
+
+// BSD 3-Clause License
+
+// Copyright (c) 2012-2021, katspaugh and contributors
+// All rights reserved.
+
 let ws = window.wavesurfer;
 
 var GLOBAL_ACTIONS = { // eslint-disable-line

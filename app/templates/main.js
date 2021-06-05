@@ -1,3 +1,11 @@
+// From https://github.com/katspaugh/wavesurfer.js
+
+// BSD 3-Clause License
+
+// Copyright (c) 2012-2021, katspaugh and contributors
+// All rights reserved.
+
+
 // Create an instance
 var wavesurfer;
 
