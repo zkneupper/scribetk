@@ -46,7 +46,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 responseType: 'json',
                 // url: '../media/nasa.json'
                 // url: '../static/nasa.json'
-                url: 'nasa.json'
+                // url: 'nasa.json'
+                url: 'nasa_short.json'
             })
             .on('success', function(data) {
                 loadRegions(data);

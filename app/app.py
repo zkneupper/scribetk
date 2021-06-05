@@ -26,7 +26,7 @@ from flask import (
 app = Flask(__name__)
 
 
-filepath_json = "media/nasa.json"
+filepath_json = "media/nasa_short.json"
 filepath_json = pathlib.Path(filepath_json)
 
 
@@ -35,14 +35,14 @@ def index():
     return render_template("index.html")
 
 
-@app.route("/media/nasa.json")
+@app.route("/media/nasa_short.json")
 def annotation():
-    return send_from_directory("media", "nasa.json")
+    return send_from_directory("media", "nasa_short.json")
 
 
-@app.route("/media/nasa.mp4")
+@app.route("/media/nasa_short.mp4")
 def video():
-    return send_from_directory("media", "nasa.mp4")
+    return send_from_directory("media", "nasa_short.mp4")
 
 
 @app.route("/endpoint", methods=["POST"])
