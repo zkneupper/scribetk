@@ -4,7 +4,7 @@
 
 # External packages
 import click
-from video_subtitler import VideoSubtitlerAppWrapper
+from video_subtitler import VideoSubtitlerApp
 
 
 def dequote(string):
@@ -44,7 +44,7 @@ def run_video_subtitler_app(filepath_video, filepath_annotation, port, debug, br
     filepath_video = dequote(filepath_video)
     filepath_annotation = dequote(filepath_annotation)
 
-    app_instance = VideoSubtitlerAppWrapper(
+    app_instance = VideoSubtitlerApp(
         filepath_video=filepath_video, filepath_annotation=filepath_annotation,
     )
 

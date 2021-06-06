@@ -19,7 +19,7 @@ from flask import (
 )
 
 
-class VideoSubtitlerAppWrapper:
+class VideoSubtitlerApp:
     def __init__(
         self,
         filepath_video="media/demo_video.mp4",
