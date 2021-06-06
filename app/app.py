@@ -2,11 +2,11 @@
 # -*- coding: utf-8 -*-
 
 
-# import click
+import click
 from video_subtitler import VideoSubtitlerAppWrapper
 
 
-def main():
+def run_video_subtitler_app():
     debug = True
     filepath_video = "media/nasa_short.mp4"
     filepath_annotation = "media/annotation.json"
@@ -19,4 +19,4 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    run_video_subtitler_app()
