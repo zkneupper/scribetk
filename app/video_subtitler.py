@@ -26,7 +26,6 @@ class VideoSubtitlerApp:
         filepath_annotation="media/demo_annotation.json",
     ):
 
-        # Set paths to the video file and annotation file
         self.filepath_video = pathlib.Path(filepath_video)
         self.filepath_annotation = pathlib.Path(filepath_annotation)
 
@@ -82,7 +81,6 @@ class VideoSubtitlerApp:
 
             return res
 
-    # def open_browser(self, port)
     def open_browser(self):
         """Open link to the app in the browser.
 
