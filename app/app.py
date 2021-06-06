@@ -7,6 +7,7 @@ from video_subtitler import VideoSubtitlerAppWrapper
 
 
 def main():
+    debug = True
     filepath_video = "media/nasa_short.mp4"
     filepath_annotation = "media/annotation.json"
 
@@ -14,7 +15,7 @@ def main():
         filepath_video=filepath_video, filepath_annotation=filepath_annotation,
     )
 
-    app_instance.run(debug=True)
+    app_instance.run(debug=debug)
 
 
 if __name__ == "__main__":
