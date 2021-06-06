@@ -11,10 +11,6 @@ import click
 from video_subtitler import VideoSubtitlerAppWrapper
 
 
-# def open_browser(url):
-#     webbrowser.open_new(url)
-
-
 def dequote(string):
     """Remove outer quotes if present"""
     string_new = string.strip()
@@ -26,12 +22,12 @@ def dequote(string):
 @click.command()
 @click.option(
     "--filepath_video",
-    default="media/nasa_short.mp4",
+    default="media/demo_video.mp4",
     help="The file path to the video you want to annotate.",
 )
 @click.option(
     "--filepath_annotation",
-    default="media/annotation.json",
+    default="media/demo_annotation.json",
     help="The file path to the json file containing the video annotations.",
 )
 @click.option(
