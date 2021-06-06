@@ -38,7 +38,7 @@ def dequote(string):
     is_flag=True,
     help="Automatically open in browser",
 )
-def run_video_subtitler_app(filepath_video, filepath_annotation, port, debug, browser):
+def cli(filepath_video, filepath_annotation, port, debug, browser):
 
     filepath_video = dequote(filepath_video)
     filepath_annotation = dequote(filepath_annotation)
@@ -51,4 +51,4 @@ def run_video_subtitler_app(filepath_video, filepath_annotation, port, debug, br
 
 
 if __name__ == "__main__":
-    run_video_subtitler_app()
+    cli()
