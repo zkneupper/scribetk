@@ -2,10 +2,6 @@
 # -*- coding: utf-8 -*-
 
 
-# Python standard library
-import webbrowser
-import threading
-
 # External packages
 import click
 from video_subtitler import VideoSubtitlerAppWrapper
@@ -51,15 +47,6 @@ def run_video_subtitler_app(filepath_video, filepath_annotation, port, debug, br
     app_instance = VideoSubtitlerAppWrapper(
         filepath_video=filepath_video, filepath_annotation=filepath_annotation,
     )
-
-    if browser:
-        # Automatically open in browser
-        def open_browser():
-            url = f"http://127.0.0.1:{port}/"
-            webbrowser.open_new(url)
-
-        t = threading.Timer(0, open_browser)
-        t.start()
 
     app_instance.run(debug=debug, port=port)
 

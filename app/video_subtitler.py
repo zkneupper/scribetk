@@ -5,6 +5,8 @@
 # Python standard library
 import json
 import pathlib
+import threading
+import webbrowser
 
 # External packages
 from flask import (
@@ -80,7 +82,28 @@ class VideoSubtitlerAppWrapper:
 
             return res
 
+    # def open_browser(self, port)
+    def open_browser(self):
+        """Open link to the app in the browser.
+
+        Start new thread to open web browser.
+        """
+
+        def _open_browser():
+            webbrowser.open_new(self.url)
+
+        t = threading.Timer(0, _open_browser)
+        t.start()
+
     def run(self, host=None, port=None, debug=None, load_dotenv=True, **options):
+
+        browser = True
+
+        if browser:
+            # Automatically open in browser
+            self.url = f"http://127.0.0.1:{port}/"
+            self.open_browser()
+
         self.app.run(
             host=host, port=port, debug=debug, load_dotenv=load_dotenv, **options
         )
