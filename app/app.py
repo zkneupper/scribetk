@@ -53,7 +53,10 @@ def my_function():
     print(f"Saving file to : {filepath_json}")
 
     with open(filepath_json, "w") as file:
-        json.dump(data, file, indent=4)
+        # json.dump(data, file, indent=4)
+
+        # Have newline at end of json file
+        file.write(f"{json.dumps(data, indent=4)}\n")
 
     return res
 
