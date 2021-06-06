@@ -18,12 +18,14 @@ from flask import (
 from flask_bootstrap import Bootstrap
 
 
-# Define the Flask app
-app = Flask(__name__)
-
-
+# Set paths
 filepath_json = "media/nasa_short.json"
 filepath_json = pathlib.Path(filepath_json)
+
+
+# Define the Flask app
+app = Flask(__name__)
+Bootstrap(app)
 
 
 @app.route("/")
