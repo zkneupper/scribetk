@@ -30,14 +30,26 @@ def index():
     return render_template("index.html")
 
 
-@app.route("/media/nasa_short.json")
-def annotation():
-    return send_from_directory("media", "nasa_short.json")
+@app.route("/video.mp4")
+def video_new():
+    filepath_video = "media/nasa_short.mp4"
+    filepath_video = pathlib.Path(filepath_video)
+
+    if not filepath_video.exists():
+        print(f"filepath_video DOES NOT EXIST:\t({filepath_video})")
+
+    return send_from_directory(filepath_video.parent, filepath_video.name)
 
 
-@app.route("/media/nasa_short.mp4")
-def video():
-    return send_from_directory("media", "nasa_short.mp4")
+@app.route("/annotation.json")
+def annotation_new():
+    filepath_annotation = "media/annotation.json"
+    filepath_annotation = pathlib.Path(filepath_annotation)
+
+    if not filepath_annotation.exists():
+        print(f"filepath_annotation DOES NOT EXIST:\t({filepath_annotation})")
+
+    return send_from_directory(filepath_annotation.parent, filepath_annotation.name)
 
 
 @app.route("/endpoint", methods=["POST"])
@@ -62,4 +74,4 @@ def my_function():
 
 
 if __name__ == "__main__":
-    app.run(debug=False)
+    app.run(debug=True)
