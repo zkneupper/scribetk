@@ -63,7 +63,6 @@ Options:
                               video annotations.
 
   --port INTEGER              port number
-  -d, --debug                 Print more output.
   -d, --debug                 Run the app in DEBUG mode.
   --browser / --no-browser    Automatically open in browser
   --help                      Show this message and exit.
