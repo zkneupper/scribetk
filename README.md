@@ -2,6 +2,9 @@
 
 A video annotation tool built with [python](https://www.python.org/), [flask](https://pypi.org/project/Flask/), and [wavesurfer.js](https://github.com/katspaugh/wavesurfer.js).
 
+This tool is adapted from the `wavesurfer.js` video annotation [example](http://wavesurfer-js.org/example/video-annotation/index.html).
+
+
 ## Installation & Usage
 
 1. How to clone the `video-subtitler` repository:
