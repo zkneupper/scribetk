@@ -15,6 +15,7 @@ from flask import (
     render_template,
     send_from_directory,
 )
+from flask_bootstrap import Bootstrap
 
 
 # Define the Flask app
