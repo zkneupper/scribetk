@@ -81,5 +81,10 @@ class VideoSubtitlerAppWrapper:
 
             return res
 
-    def run(self, debug=False):
-        self.app.run(debug=debug)
+    # def run(self, debug=False):
+    #     self.app.run(debug=debug)
+
+    def run(self, host=None, port=None, debug=None, load_dotenv=True, **options):
+        self.app.run(
+            host=host, port=port, debug=debug, load_dotenv=load_dotenv, **options
+        )
