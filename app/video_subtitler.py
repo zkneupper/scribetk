@@ -32,6 +32,10 @@ class VideoSubtitlerAppWrapper:
             self.filepath_video.exists()
         ), f"filepath_video DOES NOT EXIST:\t({self.filepath_video})"
 
+        if not self.filepath_annotation.exists():
+            # Create a new self.filepath_annotation if it doesn't exist
+            self.filepath_annotation.touch()
+
         # Define the Flask app
         self.app = Flask(__name__)
 
@@ -75,9 +79,6 @@ class VideoSubtitlerAppWrapper:
                 file.write(f"{json.dumps(data, indent=4)}\n")
 
             return res
-
-    # def run(self, debug=False):
-    #     self.app.run(debug=debug)
 
     def run(self, host=None, port=None, debug=None, load_dotenv=True, **options):
         self.app.run(
