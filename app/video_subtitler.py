@@ -28,6 +28,10 @@ class VideoSubtitlerAppWrapper:
         self.filepath_video = pathlib.Path(filepath_video)
         self.filepath_annotation = pathlib.Path(filepath_annotation)
 
+        assert (
+            self.filepath_video.exists()
+        ), f"filepath_video DOES NOT EXIST:\t({self.filepath_video})"
+
         # Define the Flask app
         self.app = Flask(__name__)
 
@@ -37,21 +41,12 @@ class VideoSubtitlerAppWrapper:
 
         @self.app.route("/video.mp4")
         def video_new():
-            # filepath_video = "media/nasa_short.mp4"
-            # filepath_video = pathlib.Path(filepath_video)
-
-            if not self.filepath_video.exists():
-                print(f"filepath_video DOES NOT EXIST:\t({self.filepath_video})")
-
             return send_from_directory(
                 self.filepath_video.parent, self.filepath_video.name,
             )
 
         @self.app.route("/annotation.json")
         def annotation_new():
-            # filepath_annotation = "media/annotation.json"
-            # filepath_annotation = pathlib.Path(filepath_annotation)
-
             if not self.filepath_annotation.exists():
                 print(
                     f"filepath_annotation DOES NOT EXIST:\t({self.filepath_annotation})",
