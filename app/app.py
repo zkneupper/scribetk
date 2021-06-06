@@ -2,8 +2,17 @@
 # -*- coding: utf-8 -*-
 
 
+# Python standard library
+import webbrowser
+import threading
+
+# External packages
 import click
 from video_subtitler import VideoSubtitlerAppWrapper
+
+
+# def open_browser(url):
+#     webbrowser.open_new(url)
 
 
 def dequote(string):
@@ -32,7 +41,13 @@ def dequote(string):
 @click.option(
     "--debug", "-d", default=False, is_flag=True, help="Run the app in DEBUG mode.",
 )
-def run_video_subtitler_app(filepath_video, filepath_annotation, port, debug):
+@click.option(
+    "--browser/--no-browser",
+    default=True,
+    is_flag=True,
+    help="Automatically open in browser",
+)
+def run_video_subtitler_app(filepath_video, filepath_annotation, port, debug, browser):
 
     filepath_video = dequote(filepath_video)
     filepath_annotation = dequote(filepath_annotation)
@@ -40,6 +55,15 @@ def run_video_subtitler_app(filepath_video, filepath_annotation, port, debug):
     app_instance = VideoSubtitlerAppWrapper(
         filepath_video=filepath_video, filepath_annotation=filepath_annotation,
     )
+
+    if browser:
+        # Automatically open in browser
+        def open_browser():
+            url = f"http://127.0.0.1:{port}/"
+            webbrowser.open_new(url)
+
+        t = threading.Timer(0, open_browser)
+        t.start()
 
     app_instance.run(debug=debug, port=port)
 
