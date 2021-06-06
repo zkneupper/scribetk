@@ -24,7 +24,7 @@ from video_subtitler import VideoSubtitlerAppWrapper
     help="The file path to the json file containing the video annotations.",
 )
 @click.option(
-    "--port", default=None, prompt="port number: (e.g., 5000)", help="port number",
+    "--port", default=5000, prompt="port number", help="port number",
 )
 def run_video_subtitler_app(filepath_video, filepath_annotation, port):
     debug = True
