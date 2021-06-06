@@ -29,7 +29,6 @@ def dequote(string):
 @click.option(
     "--port", default=5000, help="port number",
 )
-@click.option("--debug", "-d", is_flag=True, help="Print more output.")
 @click.option(
     "--debug", "-d", default=False, is_flag=True, help="Run the app in DEBUG mode.",
 )
