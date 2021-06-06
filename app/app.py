@@ -6,10 +6,6 @@ import click
 from video_subtitler import VideoSubtitlerAppWrapper
 
 
-# @click.option("--debug",  default=1 prompt="Your name", help="The person to greet.")
-# def run_video_subtitler_app(filepath_video, filepath_annotation, debug):
-
-
 @click.command()
 @click.option(
     "--filepath_video",
@@ -26,8 +22,16 @@ from video_subtitler import VideoSubtitlerAppWrapper
 @click.option(
     "--port", default=5000, prompt="port number", help="port number",
 )
-def run_video_subtitler_app(filepath_video, filepath_annotation, port):
-    debug = True
+@click.option("--debug", "-d", is_flag=True, help="Print more output.")
+@click.option(
+    "--debug",
+    "-d",
+    default=False,
+    is_flag=True,
+    prompt="debug:",
+    help="Run the app in DEBUG mode.",
+)
+def run_video_subtitler_app(filepath_video, filepath_annotation, port, debug):
 
     app_instance = VideoSubtitlerAppWrapper(
         filepath_video=filepath_video, filepath_annotation=filepath_annotation,
