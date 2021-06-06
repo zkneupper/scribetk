@@ -37,7 +37,10 @@ conda activate flask_env
 
 ## Usage
 
-To run the app with the default setting and using the demo video, do the following
+
+### Example 1: Running `video-subtitler` with the default options
+
+To run the app with the default setting and using the demo video, do the following:
 
 ```bash
 # Activate your virtual environment
@@ -52,7 +55,30 @@ python app.py
 Running `python app.py` will start the server and open the app in your browser
 
 
+
+### Example 2: Running `video-subtitler` for your own video and annotation
+
+Suppose that you have a video `video.mp4` located at this path: `/full/path/to/video.mp4`
+
+Additionally, suppose that you want to create an annotation file called `video_annotation.json` located at this path: `/full/path/to/video_annotation.json`
+
+
+To run the `video-subtitler` app for your own video and annotation, do the following:
+
+```bash
+# Activate your virtual environment
+
+# Go into the video-subtitler/app/ directory
+cd video-subtitler/app/
+
+# python app.py --filepath_video <filepath_video> --filepath_annotation <filepath_annotation>
+python app.py --filepath_video /full/path/to/video.mp4 --filepath_annotation /full/path/to/video_annotation.json
+```
+
+
 ### CLI Options
+
+Below are the command line interface (cli) options for the `video-subtitler` app:
 
 ```
 Usage: app.py [OPTIONS]
