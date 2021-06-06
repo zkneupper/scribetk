@@ -20,8 +20,8 @@ from flask import (
 class VideoSubtitlerAppWrapper:
     def __init__(
         self,
-        filepath_video="media/nasa_short.mp4",
-        filepath_annotation="media/annotation.json",
+        filepath_video="media/demo_video.mp4",
+        filepath_annotation="media/demo_annotation.json",
     ):
 
         # Set paths to the video file and annotation file
