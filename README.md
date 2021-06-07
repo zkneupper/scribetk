@@ -5,6 +5,11 @@ A video annotation tool built with [python](https://www.python.org/), [flask](ht
 This tool is adapted from the `wavesurfer.js` video annotation [example](http://wavesurfer-js.org/example/video-annotation/index.html).
 
 
+## Demo Video
+
+This video demonstrates how `scribetk` can be used:
+
+[![Demo video for scribetk](https://img.youtube.com/vi/Zg7i4q_EX9E/0.jpg)](https://www.youtube.com/watch?v=Zg7i4q_EX9E)
 
 
 ## Installation / Setup
