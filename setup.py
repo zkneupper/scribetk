@@ -13,19 +13,5 @@ setup(
     packages=find_packages(where="src"),
     package_dir={"": "src"},
     include_package_data=True,
-    package_data={"src": ["src/*"]},
-    # package_data = {
-    #     '': ['*'],
-    # },
-    # package_data = {
-    #     'media': ['*'],
-    #     'static': ['*'],
-    #     'templates': ['*'],
-    # },
-    # data_files=[
-    # 	('media', ['*']),
-    #     ('static', ['*']),
-    #     ('templates', ['*']),
-    # ],
     entry_points={"console_scripts": ["scribetk = scribetk:cli"]},
 )
