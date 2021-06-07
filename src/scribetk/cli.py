@@ -7,7 +7,7 @@ import pathlib
 
 # External packages
 import click
-from video_subtitler import VideoSubtitlerApp
+from scribetk import VideoSubtitlerApp
 
 
 def dequote(string):
