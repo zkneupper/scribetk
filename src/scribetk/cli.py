@@ -20,19 +20,21 @@ def dequote(string):
 
 @click.command()
 @click.option(
-    "--filepath_video",
+    "--video",
+    "-v",
     default=str(pathlib.Path(__file__).absolute().parent / "media/demo_video.mp4"),
     help="The file path to the video you want to annotate.",
 )
 @click.option(
-    "--filepath_annotation",
+    "--note",
+    "-n",
     default=str(
         pathlib.Path(__file__).absolute().parent / "media/demo_annotation.json",
     ),
     help="The file path to the json file containing the video annotations.",
 )
 @click.option(
-    "--port", default=5000, help="port number",
+    "--port", "-p", default=5000, help="port number",
 )
 @click.option(
     "--debug", "-d", default=False, is_flag=True, help="Run the app in DEBUG mode.",
@@ -43,10 +45,10 @@ def dequote(string):
     is_flag=True,
     help="Automatically open in browser",
 )
-def cli(filepath_video, filepath_annotation, port, debug, browser):
+def cli(video, note, port, debug, browser):
 
-    filepath_video = dequote(filepath_video)
-    filepath_annotation = dequote(filepath_annotation)
+    filepath_video = dequote(video)
+    filepath_annotation = dequote(note)
 
     app_instance = VideoSubtitlerApp(
         filepath_video=filepath_video, filepath_annotation=filepath_annotation,
