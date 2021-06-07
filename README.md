@@ -38,7 +38,7 @@ conda activate flask_env
 Install the `scribetk` package:
 
 ```bash
-pip install -e ./scribetk/
+pip install ./scribetk/
 ```
 
 
