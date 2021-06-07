@@ -73,8 +73,8 @@ To run the `scribetk` app for your own video and annotation, do the following:
 ```bash
 # Activate your virtual environment
 
-# python app.py --filepath_video <filepath_video> --filepath_annotation <filepath_annotation>
-scribetk --filepath_video /full/path/to/video.mp4 --filepath_annotation /full/path/to/video_annotation.json
+# python app.py --video <filepath_video> --note <filepath_annotation>
+scribetk --video /full/path/to/video.mp4 --note /full/path/to/video_annotation.json
 ```
 
 
@@ -86,12 +86,12 @@ Below are the command line interface (cli) options for the `video-subtitler` app
 Usage: scribetk [OPTIONS]
 
 Options:
-  --filepath_video TEXT       The file path to the video you want to annotate.
-  --filepath_annotation TEXT  The file path to the json file containing the
-                              video annotations.
+  -v, --video TEXT          The file path to the video you want to annotate.
+  -n, --note TEXT           The file path to the json file containing the
+                            video annotations.
 
-  --port INTEGER              port number
-  -d, --debug                 Run the app in DEBUG mode.
-  --browser / --no-browser    Automatically open in browser
-  --help                      Show this message and exit.
+  -p, --port INTEGER        port number
+  -d, --debug               Run the app in DEBUG mode.
+  --browser / --no-browser  Automatically open in browser
+  --help                    Show this message and exit.
 ```
