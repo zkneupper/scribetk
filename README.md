@@ -35,6 +35,15 @@ conda activate flask_env
 ```
 
 
+Install the `video-subtitler` package:
+
+```bash
+pip install ./video-subtitler/
+```
+
+
+
+
 ## Usage
 
 
