@@ -22,8 +22,12 @@ from flask import (
 class VideoSubtitlerApp:
     def __init__(
         self,
-        filepath_video="media/demo_video.mp4",
-        filepath_annotation="media/demo_annotation.json",
+        filepath_video=str(
+            pathlib.Path(__file__).absolute().parent / "media/demo_video.mp4",
+        ),
+        filepath_annotation=str(
+            pathlib.Path(__file__).absolute().parent / "media/demo_annotation.json",
+        ),
     ):
 
         self.filepath_video = pathlib.Path(filepath_video)

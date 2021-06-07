@@ -2,6 +2,9 @@
 # -*- coding: utf-8 -*-
 
 
+# Python standard library
+import pathlib
+
 # External packages
 import click
 from video_subtitler import VideoSubtitlerApp
@@ -18,12 +21,14 @@ def dequote(string):
 @click.command()
 @click.option(
     "--filepath_video",
-    default="media/demo_video.mp4",
+    default=str(pathlib.Path(__file__).absolute().parent / "media/demo_video.mp4"),
     help="The file path to the video you want to annotate.",
 )
 @click.option(
     "--filepath_annotation",
-    default="media/demo_annotation.json",
+    default=str(
+        pathlib.Path(__file__).absolute().parent / "media/demo_annotation.json",
+    ),
     help="The file path to the json file containing the video annotations.",
 )
 @click.option(
