@@ -9,7 +9,7 @@ This tool is adapted from the `wavesurfer.js` video annotation [example](http://
 
 This video demonstrates how `scribetk` can be used:
 
-[![Demo video for scribetk](https://img.youtube.com/vi/Zg7i4q_EX9E/0.jpg)](https://www.youtube.com/watch?v=Zg7i4q_EX9E)
+[![Demo video for scribetk](https://img.youtube.com/vi/SubA8A3hxYE/0.jpg)](https://www.youtube.com/watch?v=SubA8A3hxYE)
 
 
 ## Installation / Setup
