@@ -50,6 +50,14 @@ def cli(video, note, port, debug, browser):
     filepath_video = dequote(video)
     filepath_annotation = dequote(note)
 
+    filepath_video = pathlib.Path(filepath_video).absolute()
+    filepath_annotation = pathlib.Path(filepath_annotation).absolute()
+
+    print(filepath_video)
+    print(filepath_video.exists())
+    print(filepath_annotation)
+    print(filepath_annotation.exists())
+
     app_instance = VideoSubtitlerApp(
         filepath_video=filepath_video, filepath_annotation=filepath_annotation,
     )
