@@ -81,6 +81,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
+
     ////////////////////////////////////////////////////////////
     ////////////////////////////////////////////////////////////
     // Zoom slider
@@ -97,8 +98,23 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // set initial zoom to match slider value
     wavesurfer.zoom(slider.value);
+
+
     ////////////////////////////////////////////////////////////
     ////////////////////////////////////////////////////////////
+    // Speed slider
+    let sliderSpeed = document.querySelector('[data-action="speed"]');
+
+    sliderSpeed.addEventListener('input', function() {
+        wavesurfer.setPlaybackRate(Number(this.value));
+    });
+
+    // set initial zoom to match slider value
+    wavesurfer.setPlaybackRate(sliderSpeed.value);
+
+    ////////////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////////////
+
 
     /* Toggle play/pause buttons. */
     let playButton = document.querySelector('#play');
