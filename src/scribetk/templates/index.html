@@ -43,7 +43,7 @@
 
             <div id="demo">
                 <!-- Example video clipe from NASA Video Gallery https://www.youtube.com/watch?v=Zg7i4q_EX9E -->
-                <video style="display:block; margin: 0 auto;" src="/video.mp4" type="video/mpeg" width="800">
+                <video id="video" style="display:block; margin: 0 auto;" src="/video.mp4" type="video/mpeg" width="800">
                 </video>
 
                 <p id="subtitle" class="text-center text-info">&nbsp;</p>
@@ -95,6 +95,17 @@
 
                 </div>
             </div>
+
+
+            <div>
+                <!-- <div class="col-sm-3"> -->
+                  <label for="speed">Speed:</label>
+                  <input data-action="speed"
+                         type="range" min="0.1" max="2.0" step="0.01" value="1.0"
+                         style="width: 100%" />
+                <!-- </div> -->
+            </div>
+
 
             <form role="form" name="edit" style="opacity: 0; transition: opacity 300ms linear; margin: 30px 0px;">
                 <div class="col-sm-3 form-group">
