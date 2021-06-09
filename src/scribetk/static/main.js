@@ -81,6 +81,25 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
+    ////////////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////////////
+    // Zoom slider
+    let slider = document.querySelector('[data-action="zoom"]');
+
+    slider.value = wavesurfer.params.minPxPerSec;
+    slider.min = wavesurfer.params.minPxPerSec;
+    // Allow extreme zoom-in, to see individual samples
+    slider.max = 1000;
+
+    slider.addEventListener('input', function() {
+        wavesurfer.zoom(Number(this.value));
+    });
+
+    // set initial zoom to match slider value
+    wavesurfer.zoom(slider.value);
+    ////////////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////////////
+
     /* Toggle play/pause buttons. */
     let playButton = document.querySelector('#play');
     let pauseButton = document.querySelector('#pause');
