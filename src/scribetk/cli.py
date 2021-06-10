@@ -34,6 +34,9 @@ def dequote(string):
     help="The file path to the json file containing the video annotations.",
 )
 @click.option(
+    "--host", default="127.0.0.1", help="host",
+)
+@click.option(
     "--port", "-p", default=5000, help="port number",
 )
 @click.option(
@@ -45,7 +48,7 @@ def dequote(string):
     is_flag=True,
     help="Automatically open in browser",
 )
-def cli(video, note, port, debug, browser):
+def cli(video, note, host, port, debug, browser):
 
     filepath_video = dequote(video)
     filepath_annotation = dequote(note)
@@ -62,7 +65,7 @@ def cli(video, note, port, debug, browser):
         filepath_video=filepath_video, filepath_annotation=filepath_annotation,
     )
 
-    app_instance.run(debug=debug, port=port)
+    app_instance.run(debug=debug, host=host, port=port)
 
 
 if __name__ == "__main__":
