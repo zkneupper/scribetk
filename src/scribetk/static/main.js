@@ -104,9 +104,11 @@ document.addEventListener('DOMContentLoaded', function() {
     ////////////////////////////////////////////////////////////
     // Speed slider
     let sliderSpeed = document.querySelector('[data-action="speed"]');
+    let sliderSpeedLabel = document.querySelector('[for="speed"]');
 
     sliderSpeed.addEventListener('input', function() {
         wavesurfer.setPlaybackRate(Number(this.value));
+        sliderSpeedLabel.innerHTML = "Speed: &nbsp; &nbsp; " + sliderSpeed.value
     });
 
     // set initial zoom to match slider value
