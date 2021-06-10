@@ -77,11 +77,11 @@ class VideoSubtitlerApp:
 
             print(f"Saving file to : {self.filepath_annotation}")
 
-            with open(self.filepath_annotation, "w") as file:
+            with open(self.filepath_annotation, "w", encoding="utf-8") as file:
                 # json.dump(data, file, indent=4)
 
                 # Have newline at end of json file
-                file.write(f"{json.dumps(data, indent=4)}\n")
+                file.write(f"{json.dumps(data, ensure_ascii=False, indent=4)}\n")
 
             return res
 
