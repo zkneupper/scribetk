@@ -74,6 +74,25 @@
                         </button>
                     </div>
 
+                    <div class="col-sm-6">
+                      <label for="speed">Speed: &nbsp; &nbsp; 1.0</label>
+                      <input data-action="speed"
+                             type="range" min="0.1" max="2.0" step="0.01" value="1.0"
+                             style="width: 100%" />
+                    </div>
+
+                </div>
+
+
+                <div class="row" style="margin: 30px 0">
+
+                    <div class="col-sm-3">
+                        <div>
+                          Time: &emsp; &emsp;
+                          <div id="timeNow" style='display:inline;'></div>
+                        </div>
+                    </div>
+
                     <div class="col-sm-3">
                         <button
                                 class="btn btn-info btn-block"
@@ -84,18 +103,6 @@
                             <i class="glyphicon glyphicon-file"></i>
                             Save Annotation
                         </button>
-                    </div>
-
-                </div>
-
-
-                <div class="row" style="margin: 30px 0">
-
-                    <div class="col-sm-6">
-                      <label for="speed">Speed: &nbsp; &nbsp; 1.0</label>
-                      <input data-action="speed"
-                             type="range" min="0.1" max="2.0" step="0.01" value="1.0"
-                             style="width: 100%" />
                     </div>
 
                     <div>
@@ -144,6 +151,16 @@
                     })
                 })
             };
+        </script>
+
+        <script type="text/javascript">
+            var showVideoCurrentTime = function () {
+                let sec_num = video.currentTime;
+                document.getElementById("timeNow").innerHTML = `${sec_num.toFixed(3)}`;
+            };
+
+            // Update every 10 milliseconds
+            var timer = setInterval(showVideoCurrentTime, 10);
         </script>
 
     </body>
