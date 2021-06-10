@@ -85,19 +85,22 @@ document.addEventListener('DOMContentLoaded', function() {
     ////////////////////////////////////////////////////////////
     ////////////////////////////////////////////////////////////
     // Zoom slider
-    let slider = document.querySelector('[data-action="zoom"]');
+    let sliderZoom = document.querySelector('[data-action="zoom"]');
+    let sliderZoomLabel = document.querySelector('[for="zoom"]');
 
-    slider.value = wavesurfer.params.minPxPerSec;
-    slider.min = wavesurfer.params.minPxPerSec;
+
+    sliderZoom.value = wavesurfer.params.minPxPerSec;
+    sliderZoom.min = wavesurfer.params.minPxPerSec;
     // Allow extreme zoom-in, to see individual samples
-    slider.max = 1000;
+    sliderZoom.max = 1000;
 
-    slider.addEventListener('input', function() {
+    sliderZoom.addEventListener('input', function() {
         wavesurfer.zoom(Number(this.value));
+        sliderZoomLabel.innerHTML = "Zoom: &nbsp; &nbsp; " + sliderZoom.value
     });
 
     // set initial zoom to match slider value
-    wavesurfer.zoom(slider.value);
+    wavesurfer.zoom(sliderZoom.value);
 
 
     ////////////////////////////////////////////////////////////
