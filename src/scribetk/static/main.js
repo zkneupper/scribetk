@@ -144,7 +144,7 @@ function saveRegions() {
             return {
                 start: region.start,
                 end: region.end,
-                attributes: region.attributes,
+                // attributes: region.attributes,
                 data: region.data
             };
         })
